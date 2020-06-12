@@ -54,7 +54,7 @@ class CasosController extends Controller
             'regiao'=> $request->get('regiao')
         ]);
         $caso->save();
-        return redirect('/casos')->with('success', 'Contact saved!');
+        return redirect('/casos')->with('success', 'Caso salvo!');
     }
 
     /**
@@ -76,7 +76,8 @@ class CasosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $caso = Casos::find($id);
+        return view('casos.edit', compact('caso'));
     }
 
     /**
@@ -88,7 +89,23 @@ class CasosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nome'=>'required',
+            'sobrenome'=>'required',
+            'bairro'=>'required'
+        ]);
+
+        $caso = Casos::find($id);
+        $caso->nome = $request->get('nome');
+        $caso->sobrenome = $request->get('sobrenome');
+        $caso->rua = $request->get('rua');
+        $caso->numero = $request->get('numero');
+        $caso->complemento = $request->get('complemento');
+        $caso->bairro = $request->get('bairro');
+        $caso->regiao = $request->get('regiao');
+        $caso->save();
+
+        return redirect('/casos')->with('success', 'Caso alterado!');
     }
 
     /**
@@ -99,6 +116,9 @@ class CasosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $caso = Casos::find($id);
+        $caso->delete();
+
+        return redirect('/casos')->with('success', 'Caso deleted!');
     }
 }
