@@ -38,7 +38,7 @@
           </div>
           <div class="form-group">
               <label for="complemento">Complemento:</label>
-              <input type="text" class="form-control input-sm" name="complemento" value={{ $caso->complemento }} />
+              <input type="text" class="form-control input-sm" name="complemento" value={{ $caso->complemento }}></input>
           </div>
           <div class="form-group">
               <label for="bairro">Bairro:</label>
