@@ -45,7 +45,8 @@
           <div class="form-group">
               <label for="regiao">Regiao:</label>
               <input type="text" class="form-control input-sm" name="regiao"/>
-          </div>                          
+          </div> 
+          <a class="btn btn-outline-danger" href="{{ route('casos.index') }}">Cancel</a>                         
           <button type="submit" class="btn btn-primary">Add caso</button>
       </form>
   </div>
