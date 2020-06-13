@@ -1,4 +1,4 @@
-<script type="text/javascript">
+{/* <script type="text/javascript">
      function deleteData(id)
      {
          var id = id;
@@ -11,4 +11,4 @@
      {
          $("#deleteForm").submit();
      }
-  </script>
+  </script> */}
