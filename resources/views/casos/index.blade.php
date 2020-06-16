@@ -18,7 +18,7 @@
 <div class="row">
   <div class="col-sm-12">
       <h1 class="display-3">Casos</h1>    
-    <table class="table table-striped">
+    <table class="table table-sm table-striped table-bordered">
       <thead>
           <tr>
             <td>ID</td>

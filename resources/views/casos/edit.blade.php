@@ -18,40 +18,54 @@
             @method('PATCH') 
             @csrf  
             <!-- value={{ $caso->first_name }} -->
-            <div class="form-group">    
-              <label for="nome">Nome:</label>
-              <input type="text" class="form-control input-sm" name="nome" value={{ $caso->nome }} />
-          </div>
+            <div class="form-group row">    
+              <label for="nome" class="col-sm-3 font-weight-bold col-form-label">Nome:</label>
+              <div class="col-sm-9">
+                    <input type="text" class="form-control input-sm" name="nome" value={{ $caso->nome }} />
+              </div>
+            </div>
 
-          <div class="form-group">
-              <label for="sobrenome">Sobrenome:</label>
-              <input type="text" class="form-control input-sm" name="sobrenome" value={{ $caso->sobrenome }} />
-          </div>
+            <div class="form-group row">
+                <label for="sobrenome" class="col-sm-3 font-weight-bold col-form-label">Sobrenome:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control input-sm" name="sobrenome" value={{ $caso->sobrenome }} />
+                </div>
+            </div>
 
-          <div class="form-group">
-              <label for="rua">Rua:</label>
-              <input type="text" class="form-control input-sm" name="rua" value={{ $caso->rua }} />
-          </div>
-          <div class="form-group">
-              <label for="numero">Numero:</label>
-              <input type="text" class="form-control input-sm" name="numero" value={{ $caso->numero }} />
-          </div>
-          <div class="form-group">
-              <label for="complemento">Complemento:</label>
-              <input type="text" class="form-control input-sm" name="complemento" value={{ $caso->complemento }}></input>
-          </div>
-          <div class="form-group">
-              <label for="bairro">Bairro:</label>
-              <input type="text" class="form-control input-sm" name="bairro" value={{ $caso->bairro }} />
-          </div>
-          <div class="form-group">
-              <label for="regiao">Regiao:</label>
-              <input type="text" class="form-control input-sm" name="regiao" value={{ $caso->regiao }} />
-          </div>
-          <div class="form-group pull-right">
-            <a class="btn btn-outline-danger" href="{{ route('casos.index') }}">Cancel</a>
-            <button type="submit" class="btn btn-primary">Update</button>
-          </div>
+            <div class="form-group row">
+                <label for="rua" class="col-sm-3 font-weight-bold col-form-label">Rua:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control input-sm" name="rua" value={{ $caso->rua }} />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="numero" class="col-sm-3 font-weight-bold col-form-label">Numero:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control input-sm" name="numero" value={{ $caso->numero }} />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="complemento" class="col-sm-3 font-weight-bold col-form-label">Complemento:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control input-sm" name="complemento" value={{ $caso->complemento }}></input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="bairro" class="col-sm-3 font-weight-bold col-form-label">Bairro:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control input-sm" name="bairro" value={{ $caso->bairro }} />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="regiao" class="col-sm-3 font-weight-bold col-form-label">Regiao:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control input-sm" name="regiao" value={{ $caso->regiao }} />
+                </div>
+            </div>
+            <div class="form-group pull-right">
+                <a class="btn btn-outline-danger" href="{{ route('casos.index') }}">Cancel</a>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
         </form>
     </div>
 </div>
