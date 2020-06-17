@@ -3,11 +3,12 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto-Combate-COVID19</title>
+  <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="{{ asset('site/bootstrap.css') }}" />
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            
+      <a class="navbar-brand" href="{{ url('/') }}"><img src="<?= asset("covid.png"); ?>" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
               <span class="navbar-toggler-icon"></span>
             </button>
