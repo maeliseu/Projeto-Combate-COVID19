@@ -12,45 +12,38 @@
 @section('main')
 
 <div>
-    <a style="margin: 19px;" href="{{ route('casos.create')}}" class="btn btn-primary">Novo Caso</a>
+    <a style="margin: 19px;" href="{{ route('bairros.create')}}" class="btn btn-primary">Novo Bairro</a>
 </div>
 
 <div class="row">
-  <div class="col-sm-12">
-      <h1 class="display-3">Casos</h1>    
-    <table class="table table-sm table-striped table-bordered">
+  <div class="col-md-12">
+    <h1 class="display-3">Bairros</h1>    
+    <table class="table table-sm table-striped ">
+        
       <thead>
           <tr>
-            <td>ID</td>
-            <td>Nome</td>
-            <td>Rua</td>
-            <td>Numero</td>
-            <td>Complemento</td>
-            <td>Bairro</td>
-            <td>Região</td>
+            <td class="">ID</td>            
+            <td class="">Bairro</td>
+            <td class="">Região</td>
             <td width="10%" colspan = 2>Ações</td>
           </tr>
       </thead>
       <tbody>
-          @foreach($casos as $caso)
+          @foreach($bairros as $bairro)
           <tr>
-              <td>{{$caso->id}}</td>
-              <td>{{$caso->nome}} {{$caso->sobrenome}}</td>
-              <td>{{$caso->rua}}</td>
-              <td>{{$caso->numero}}</td>
-              <td>{{$caso->complemento}}</td>
-              <td>{{$caso->bairro}}</td>
-              <td>{{$caso->regiao}}</td>
+              <td>{{$bairro->id}}</td>
+              <td >{{$bairro->bairro}}</td>
+              <td>{{$bairro->regiao}}</td>
               <td>
-                  <a href="{{ route('casos.edit',$caso->id)}}" class="btn btn-primary">Edit</a>
+                  <a href="{{ route('bairros.edit',$bairro->id)}}" class="btn btn-primary">Edit</a>
               </td>
               <td>
-                  <form action="{{ route('casos.destroy', $caso->id)}}" method="post">
+                  <form action="{{ route('bairros.destroy', $bairro->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-xs btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button>
                   </form>
-                  {{-- <a href="javascript:;" data-toggle="modal" onclick="deleteData({{$caso->id}})" 
+                  {{-- <a href="javascript:;" data-toggle="modal" onclick="deleteData({{$bairro->id}})" 
                     data-target="#DeleteModal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a> --}}
               </td>
           </tr>

@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::Resource('casos', 'CasosController');
+Route::Resource('bairros', 'BairrosController');
