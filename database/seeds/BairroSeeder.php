@@ -11,6 +11,9 @@ class BairroSeeder extends Seeder
      */
     public function run()
     {
+        if(DB::table('bairros')->get()->count() == 0){
+
+        
         DB::table('bairros')->insert(
             ['bairro' => 'Centro', 'regiao' => '1' ,],);
         DB::table('bairros')->insert(
@@ -196,6 +199,6 @@ class BairroSeeder extends Seeder
         
             // 5 ---   Jd. Madalena de Canossa • Jd. Nossa Senhora de Fátima • Jd. Nova Suiça • Jd. Osvaldo Buzolin • Jd. Palmeiras • Jd. Pousada dos Barões • Jd. Santa Efigênia • Jd. Santa Marta • Jd. Tancredo Neves • Pq. das Flores • Residencial Vilagio Las Palmas
         
-        
+        } else { echo "\nTable is not empty, therefore NOT \n"; }
     }
 }
