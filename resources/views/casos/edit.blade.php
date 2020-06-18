@@ -17,7 +17,6 @@
         <form method="post" action="{{ route('casos.update', $caso->id) }}">
             @method('PATCH') 
             @csrf  
-            <!-- value={{ $caso->first_name }} -->
             <div class="form-group row">    
               <label for="nome" class="col-sm-3 font-weight-bold col-form-label">Nome:</label>
               <div class="col-sm-9">
@@ -56,7 +55,7 @@
                   <Select class="form-control input-sm" name="id_bairro" id="id_bairro">
                     
                     @foreach ($bairros as $item)
-                      <option value="{{$item->id}}" {{ ($caso->id_bairro == $item->id ? "selected":"") }}>{{$item->bairro}}</option>
+                      <option value="{{$item->id}}" {{($caso->id_bairro == $item->id ? "selected":"")}}>{{$item->bairro}}</option>
                     @endforeach
                   </select>
                 </div>
