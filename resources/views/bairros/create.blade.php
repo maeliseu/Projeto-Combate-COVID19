@@ -14,7 +14,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('bairros.store') }}">
+      <form method="post" action="{{route('bairros.store')}}">
           @csrf
           <div class="form-group row">
               <label for="bairro" class="col-sm-3 font-weight-bold col-form-label">Bairro:</label>
@@ -30,7 +30,7 @@
               </div>
           </div>
 
-          <a class="btn btn-outline-danger" href="{{ route('bairros.index') }}">Cancel</a>                         
+          <a class="btn btn-outline-danger" href="{{route('bairros.index')}}">Cancel</a>                         
           <button type="submit" class="btn btn-primary">Add bairro</button>
       </form>
   </div>

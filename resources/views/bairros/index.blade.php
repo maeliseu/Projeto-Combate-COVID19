@@ -12,7 +12,7 @@
 @section('main')
 
 <div>
-    <a style="margin: 19px;" href="{{ route('bairros.create')}}" class="btn btn-primary">Novo Bairro</a>
+    <a style="margin: 19px;" href="{{route('bairros.create')}}" class="btn btn-primary">Novo Bairro</a>
 </div>
 
 <div class="row">
@@ -35,16 +35,14 @@
               <td >{{$bairro->bairro}}</td>
               <td>{{$bairro->regiao}}</td>
               <td>
-                  <a href="{{ route('bairros.edit',$bairro->id)}}" class="btn btn-primary">Edit</a>
+                  <a href="{{route('bairros.edit',$bairro->id)}}" class="btn btn-primary">Edit</a>
               </td>
               <td>
-                  <form action="{{ route('bairros.destroy', $bairro->id)}}" method="post">
+                  <form action="{{route('bairros.destroy', $bairro->id)}}" method="post">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-xs btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button>
+                    <button class="btn btn-xs btn-danger" onclick="return confirm('Tem certeza?')" type="submit">Delete</button>
                   </form>
-                  {{-- <a href="javascript:;" data-toggle="modal" onclick="deleteData({{$bairro->id}})" 
-                    data-target="#DeleteModal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a> --}}
               </td>
           </tr>
           @endforeach
@@ -52,32 +50,8 @@
     </table>
   </div>
 </div>
-{{-- <div id="DeleteModal" class="modal fade text-danger" role="dialog">
-  <div class="modal-dialog ">
-    <!-- Modal content-->
-    <form action="" id="deleteForm" method="post">
-        <div class="modal-content">
-            <div class="modal-header ">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center white">DELETE CONFIRMATION</h4>
-            </div>
-            <div class="modal-body">
-                {{ csrf_field() }}
-                {{ method_field('DELETE') }}
-                <p class="text-center">Are You Sure Want To Delete ?</p>
-            </div>
-            <div class="modal-footer">
-                <center>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
-                    <button type="submit" name="" class="btn btn-danger" data-dismiss="modal" onclick="formSubmit()">Yes, Delete</button>
-                </center>
-            </div>
-        </div>
-    </form>
-  </div>
- </div> --}}
 @endsection
 
 @section('scripts')
-<script src="{{ asset('site/sitejs.js') }}"></script>
+<script src="{{asset('site/sitejs.js')}}"></script>
 @endsection

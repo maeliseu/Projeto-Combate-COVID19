@@ -14,39 +14,39 @@
         </div>
         <br /> 
         @endif
-        <form method="post" action="{{ route('casos.update', $caso->id) }}">
+        <form method="post" action="{{route('casos.update', $caso->id)}}">
             @method('PATCH') 
             @csrf  
             <div class="form-group row">    
               <label for="nome" class="col-sm-3 font-weight-bold col-form-label">Nome:</label>
               <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="nome" value={{ $caso->nome }} />
+                    <input type="text" class="form-control input-sm" name="nome" value={{$caso->nome}} />
               </div>
             </div>
 
             <div class="form-group row">
                 <label for="sobrenome" class="col-sm-3 font-weight-bold col-form-label">Sobrenome:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="sobrenome" value={{ $caso->sobrenome }} />
+                    <input type="text" class="form-control input-sm" name="sobrenome" value={{$caso->sobrenome}} />
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="rua" class="col-sm-3 font-weight-bold col-form-label">Rua:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="rua" value={{ $caso->rua }} />
+                    <input type="text" class="form-control input-sm" name="rua" value={{$caso->rua}} />
                 </div>
             </div>
             <div class="form-group row">
                 <label for="numero" class="col-sm-3 font-weight-bold col-form-label">Numero:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="numero" value={{ $caso->numero }} />
+                    <input type="text" class="form-control input-sm" name="numero" value={{$caso->numero}} />
                 </div>
             </div>
             <div class="form-group row">
                 <label for="complemento" class="col-sm-3 font-weight-bold col-form-label">Complemento:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="complemento" value="{{ $caso->complemento }}" />
+                    <input type="text" class="form-control input-sm" name="complemento" value="{{$caso->complemento}}" />
                 </div>
             </div>
             <div class="form-group row">

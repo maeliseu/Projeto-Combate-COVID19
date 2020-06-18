@@ -14,7 +14,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('casos.store') }}">
+      <form method="post" action="{{route('casos.store')}}">
           @csrf
           <div class="form-group row">    
               <label for="nome" class="col-sm-3 font-weight-bold col-form-label">Nome:</label>
@@ -62,13 +62,6 @@
                 </select>
               </div>
           </div>
-
-          {{-- <div class="form-group row">
-              <label for="regiao" class="col-sm-3 font-weight-bold col-form-label">Regiao:</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control input-sm" name="regiao"/>
-              </div>
-          </div> --}}
 
           <a class="btn btn-outline-danger" href="{{ route('casos.index') }}">Cancel</a>                         
           <button type="submit" class="btn btn-primary">Add caso</button>

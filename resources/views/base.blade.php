@@ -14,9 +14,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link {{ (request()->segment(1) == '') ? 'active' : '' }}" href="{{ url('/') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {{ (request()->segment(1) == 'casos') ? 'active' : '' }}" href="{{ route('casos.index') }}">Casos</a></li>
-                    <li class="nav-item"><a class="nav-link {{ (request()->segment(1) == 'bairros') ? 'active' : '' }}" href="{{ route('bairros.index') }}">Bairros</a></li>
+                    <li class="nav-item"><a class="nav-link {{(request()->segment(1) == '') ? 'active' : ''}}" href="{{url('/')}}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {{(request()->segment(1) == 'casos') ? 'active' : ''}}" href="{{route('casos.index')}}">Casos</a></li>
+                    <li class="nav-item"><a class="nav-link {{(request()->segment(1) == 'bairros') ? 'active' : ''}}" href="{{route('bairros.index')}}">Bairros</a></li>
               </ul>
             </div>
     </nav>
@@ -25,8 +25,8 @@
   <div class="container">
     @yield('main')
   </div>
-  <script src="{{ asset('site/jquery.js') }}"></script>
-  <script src="{{ asset('site/bootstrap.js') }}"></script>
+  <script src="{{asset('site/jquery.js')}}"></script>
+  <script src="{{asset('site/bootstrap.js')}}"></script>
   @yield('scripts')
 </body>
 </html>
