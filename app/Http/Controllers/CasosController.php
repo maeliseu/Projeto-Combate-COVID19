@@ -36,7 +36,7 @@ class CasosController extends Controller
      */
     public function create()
     {
-        $bairros=$this->objBairros->all();
+        $bairros=$this->objBairros->orderBy('bairro', 'asc')->get();
         return view('casos.create', compact('bairros'));
     }
 
@@ -87,7 +87,7 @@ class CasosController extends Controller
     public function edit($id)
     {
         $caso = $this->objCasos->find($id);
-        $bairros=$this->objBairros->all();
+        $bairros=$this->objBairros->orderBy('bairro', 'asc')->get();
         return view('casos.edit', compact('caso' , 'bairros'));
     }
 
