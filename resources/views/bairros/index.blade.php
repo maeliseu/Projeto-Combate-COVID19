@@ -50,6 +50,7 @@
     </table>
   </div>
 </div>
+{{$bairros->links()}}
 @endsection
 
 @section('scripts')

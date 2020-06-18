@@ -15,7 +15,7 @@ class BairrosController extends Controller
      */
     public function index()
     {
-        $bairros = bairros::all();
+        $bairros = bairros::paginate(5);
 
         return view('bairros.index', compact('bairros'));
     }

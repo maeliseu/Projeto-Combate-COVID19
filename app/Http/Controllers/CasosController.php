@@ -24,9 +24,8 @@ class CasosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        // dd($this->objCasos->find(1)->relBairros->bairro);
-        $casos=$this->objCasos->all();
+    {        
+        $casos=$this->objCasos->paginate(5);
         return view('casos.index', compact('casos'));
     }
 
