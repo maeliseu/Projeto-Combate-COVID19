@@ -54,9 +54,9 @@
                 <label for="bairro" class="col-sm-3 font-weight-bold col-form-label">Bairro:</label>
                 <div class="col-sm-9">
                   <Select class="form-control input-sm" name="id_bairro" id="id_bairro">
-                    <option value="{{ $caso->id_bairro }}">{{$caso->relBairros->bairro}}</option>
+                    
                     @foreach ($bairros as $item)
-                      <option value="{{$item->id}}">{{$item->bairro}}</option>
+                      <option value="{{$item->id}}" {{ ($caso->id_bairro == $item->id ? "selected":"") }}>{{$item->bairro}}</option>
                     @endforeach
                   </select>
                 </div>
