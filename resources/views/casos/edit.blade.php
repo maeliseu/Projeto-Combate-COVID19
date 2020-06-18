@@ -47,21 +47,21 @@
             <div class="form-group row">
                 <label for="complemento" class="col-sm-3 font-weight-bold col-form-label">Complemento:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="complemento" value={{ $caso->complemento }}></input>
+                    <input type="text" class="form-control input-sm" name="complemento" value="{{ $caso->complemento }}" />
                 </div>
             </div>
             <div class="form-group row">
                 <label for="bairro" class="col-sm-3 font-weight-bold col-form-label">Bairro:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="bairro" value={{ $caso->bairro }} />
+                  <Select class="form-control input-sm" name="id_bairro" id="id_bairro">
+                    <option value="{{ $caso->id_bairro }}">{{$caso->relBairros->bairro}}</option>
+                    @foreach ($bairros as $item)
+                      <option value="{{$item->id}}">{{$item->bairro}}</option>
+                    @endforeach
+                  </select>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="regiao" class="col-sm-3 font-weight-bold col-form-label">Regiao:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="regiao" value={{ $caso->regiao }} />
-                </div>
-            </div>
+            
             <div class="form-group pull-right">
                 <a class="btn btn-outline-danger" href="{{ route('casos.index') }}">Cancel</a>
                 <button type="submit" class="btn btn-primary">Update</button>

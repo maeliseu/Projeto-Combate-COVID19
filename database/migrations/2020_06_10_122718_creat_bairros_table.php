@@ -14,7 +14,7 @@ class CreatBairrosTable extends Migration
     public function up()
     {
         Schema::create('bairros', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('bairro');
             $table->string('regiao');
             $table->timestamps();

@@ -21,8 +21,8 @@ class CreateCasosTable extends Migration
             $table->string('rua');
             $table->string('numero');
             $table->string('complemento')->nullable();
-            $table->string('bairro');
-            $table->string('regiao');
+            $table->integer('id_bairro')->unsigned();
+            $table->foreign('id_bairro')->references('id')->on('bairros')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

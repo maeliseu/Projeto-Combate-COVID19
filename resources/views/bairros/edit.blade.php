@@ -21,13 +21,13 @@
             <div class="form-group row">
                 <label for="bairro" class="col-sm-3 font-weight-bold col-form-label">Bairro:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="bairro" value={{ $bairro->bairro }} />
+                    <input type="text" class="form-control input-sm" name="bairro" value="{{ $bairro->bairro }}" />
                 </div>
             </div>
             <div class="form-group row">
                 <label for="regiao" class="col-sm-3 font-weight-bold col-form-label">Regiao:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control input-sm" name="regiao" value={{ $bairro->regiao }} />
+                    <input type="text" class="form-control input-sm" name="regiao" value="{{ $bairro->regiao }}" />
                 </div>
             </div>
             <div class="form-group pull-right">

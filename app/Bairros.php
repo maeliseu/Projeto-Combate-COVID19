@@ -10,4 +10,10 @@ class Bairros extends Model
         'bairro',
         'regiao'
     ];
+
+    public function relCasos()
+    {
+        return $this->hasMany ('App\Casos' , 'id_bairro');
+    }
+    
 }

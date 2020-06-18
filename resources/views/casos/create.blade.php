@@ -54,16 +54,21 @@
           <div class="form-group row">
               <label for="bairro" class="col-sm-3 font-weight-bold col-form-label">Bairro:</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control input-sm" name="bairro"/>
+                <Select class="form-control input-sm" name="id_bairro" id="id_bairro">
+                  
+                  @foreach ($bairros as $item)
+                    <option value="{{$item->id}}">{{$item->bairro}}</option>
+                  @endforeach
+                </select>
               </div>
           </div>
 
-          <div class="form-group row">
+          {{-- <div class="form-group row">
               <label for="regiao" class="col-sm-3 font-weight-bold col-form-label">Regiao:</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control input-sm" name="regiao"/>
               </div>
-          </div>
+          </div> --}}
 
           <a class="btn btn-outline-danger" href="{{ route('casos.index') }}">Cancel</a>                         
           <button type="submit" class="btn btn-primary">Add caso</button>

@@ -12,7 +12,11 @@ class Casos extends Model
         'rua',
         'numero',
         'complemento',
-        'bairro',
-        'regiao'
+        'id_bairro'
     ];
+
+    public function relBairros()
+    {
+        return $this->hasOne ('App\Bairros' , 'id', 'id_bairro');
+    }
 }

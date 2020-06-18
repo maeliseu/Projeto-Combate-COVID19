@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Casos;
+use App\Bairros;
 
 class CasosController extends Controller
 {
+    private $objCasos;
+    private $objBairros;
+    
+    public function __construct()
+    {
+        $this->objCasos=new Casos();
+        $this->objBairros=new Bairros();
+    }
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +25,8 @@ class CasosController extends Controller
      */
     public function index()
     {
-        $casos = Casos::all();
-
+        // dd($this->objCasos->find(1)->relBairros->bairro);
+        $casos=$this->objCasos->all();
         return view('casos.index', compact('casos'));
     }
 
@@ -27,7 +37,8 @@ class CasosController extends Controller
      */
     public function create()
     {
-        return view('casos.create');
+        $bairros=$this->objBairros->all();
+        return view('casos.create', compact('bairros'));
     }
 
     /**
@@ -41,17 +52,17 @@ class CasosController extends Controller
         $request->validate([
             'nome'=>'required',
             'sobrenome'=>'required',
-            'bairro'=>'required'
+            'id_bairro'=>'required'
         ]);
-
+        // $bairro = Bairros::find($request->get('id_bairro'));
         $caso = new Casos([
             'nome' => $request->get('nome'),
             'sobrenome' => $request->get('sobrenome'),
             'rua' => $request->get('rua'),
             'numero'=> $request->get('numero'),
             'complemento'=> $request->get('complemento'),
-            'bairro'=> $request->get('bairro'),
-            'regiao'=> $request->get('regiao')
+            'id_bairro'=> $request->get('id_bairro'),
+            
         ]);
         $caso->save();
         return redirect('/casos')->with('success', 'Caso salvo!');
@@ -76,8 +87,9 @@ class CasosController extends Controller
      */
     public function edit($id)
     {
-        $caso = Casos::find($id);
-        return view('casos.edit', compact('caso'));
+        $caso = $this->objCasos->find($id);
+        $bairros=$this->objBairros->all();
+        return view('casos.edit', compact('caso' , 'bairros'));
     }
 
     /**
@@ -92,7 +104,7 @@ class CasosController extends Controller
         $request->validate([
             'nome'=>'required',
             'sobrenome'=>'required',
-            'bairro'=>'required'
+            'id_bairro'=>'required'
         ]);
 
         $caso = Casos::find($id);
@@ -101,8 +113,7 @@ class CasosController extends Controller
         $caso->rua = $request->get('rua');
         $caso->numero = $request->get('numero');
         $caso->complemento = $request->get('complemento');
-        $caso->bairro = $request->get('bairro');
-        $caso->regiao = $request->get('regiao');
+        $caso->id_bairro = $request->get('id_bairro');
         $caso->save();
 
         return redirect('/casos')->with('success', 'Caso alterado!');

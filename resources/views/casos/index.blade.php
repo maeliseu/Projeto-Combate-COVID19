@@ -27,7 +27,7 @@
             <td>Numero</td>
             <td>Complemento</td>
             <td>Bairro</td>
-            <td>Região</td>
+            
             <td width="10%" colspan = 2>Ações</td>
           </tr>
       </thead>
@@ -39,11 +39,11 @@
               <td>{{$caso->rua}}</td>
               <td>{{$caso->numero}}</td>
               <td>{{$caso->complemento}}</td>
-              <td>{{$caso->bairro}}</td>
-              <td>{{$caso->regiao}}</td>
+              <td>{{$caso->find($caso->id)->relBairros->bairro}}</td>
+              
               <td>
                   <a href="{{ route('casos.edit',$caso->id)}}" class="btn btn-primary">Edit</a>
-              </td>
+              </td> 
               <td>
                   <form action="{{ route('casos.destroy', $caso->id)}}" method="post">
                     @csrf
