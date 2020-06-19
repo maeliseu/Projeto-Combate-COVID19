@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="col-sm-6">
-        <img src="mapaop.png" alt="">
+        <img src="{{$new_image}}" alt="">
     </div>
 </div>
 
