@@ -37,7 +37,7 @@ class MapsController extends Controller
         
         
         // GROUP by bairros.regiao     
-        $casos=$this->objCasos->all();
+        $casos=$this->objCasos->join('bairros' ,'casos.id_bairro','=','bairros.id')->get();
         return view('maps', compact('casos'));
     }
 }
