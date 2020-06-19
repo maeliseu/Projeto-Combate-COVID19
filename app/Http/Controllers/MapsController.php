@@ -27,7 +27,7 @@ class MapsController extends Controller
     public function makeMap($x, $y, $imagem ,$soma)
     {        
         $imagem->text($soma.' Casos', $x, $y, function($font) {  
-            $font->file(public_path('Piedra.ttf'));
+            $font->file(public_path('SourceSansPro-Bold.ttf'));
             $font->size(25);  
             $font->color('#00000');   
             $font->angle(0);  
@@ -56,8 +56,9 @@ class MapsController extends Controller
         $this->makeMap('642','434',$img,$casos->where('regiao','=','8')->count());
         $this->makeMap('768','355',$img,$casos->where('regiao','=','9')->count());
 
+        $img->resize(682.5, 590.25);
 
-        //$img->save('mapaop2.png');
+        
         $img->encode('png');
         $type = 'png';
         $new_image = 'data:image/' . $type . ';base64,' . base64_encode($img);

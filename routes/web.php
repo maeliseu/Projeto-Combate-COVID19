@@ -20,4 +20,4 @@ Route::get('/', function () {
 Route::Resource('casos', 'CasosController');
 Route::Resource('bairros', 'BairrosController');
 
-Route::Resource('maps', 'MapsController');
+Route::Resource('/', 'MapsController');

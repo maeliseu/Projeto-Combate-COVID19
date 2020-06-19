@@ -5,6 +5,7 @@
   <title>Projeto-Combate-COVID19</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="{{ asset('site/bootstrap.css') }}" />
+  <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
