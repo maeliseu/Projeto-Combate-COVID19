@@ -38,6 +38,9 @@
                         <div class="row" style="background: #EE5159;">
                             <div class="col-sm-9">LESTE II - Região 9</div> <div class="col-sm-2">{{$casos->where('regiao','=','9')->count()}}</div>
                         </div>
+                        <div class="row" style="">
+                            <div class="col-sm-9"><b>Total</b></div> <div class="col-sm-2"><b>{{$casos->count()}}</b></div>
+                        </div>
                     </div>
                 </div>
                 
