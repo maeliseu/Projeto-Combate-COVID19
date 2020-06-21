@@ -11,15 +11,15 @@ class casosTableSeeder extends Seeder
      */
     public function run()
     {
-        $arrays = range(0,100);
+        $arrays = range(0,500);
         foreach ($arrays as $valor) {
 	        DB::table('casos')->insert([	            
 	            'Nome' => Str::random(10),
 	            'sobrenome' => Str::random(10),
                 'rua' => Str::random(10),
-                'numero'=> Str::random(3),
+                'numero'=> rand(1,1000),
                 'complemento'=> Str::random(10),
-                'id_bairro'=> rand(88, 189),
+                'id_bairro'=> rand(1, 189),
 	             
 	        ]);
         }
