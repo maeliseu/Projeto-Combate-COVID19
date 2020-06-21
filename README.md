@@ -9,4 +9,4 @@ CRUD dos casos positivos, separando-os por bairros.
 comandos>  php artisan db:seed --class=casosTableSeeder
 
 
-![Screenshot](public\Captura.png)
+![Screenshot](https://github.com/maeliseu/Projeto-Combate-COVID19/blob/master/public/Capturar.PNG)
