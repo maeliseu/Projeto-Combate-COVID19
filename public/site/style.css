@@ -2,3 +2,14 @@
     display: flex;
     flex: 1 1 auto;
 }
+
+
+.upsidelist {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+
+.botsidelist {
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
