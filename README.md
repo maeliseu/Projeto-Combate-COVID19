@@ -12,5 +12,5 @@ composer update
 php artisan key:generate
 php artisan db:seed --class=casosTableSeeder
 ```
+![Screenshot](Capturar.PNG)
 
-![Screenshot](https://github.com/maeliseu/Projeto-Combate-COVID19/blob/master/public/Capturar.PNG)
