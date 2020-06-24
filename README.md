@@ -7,10 +7,10 @@ CRUD dos casos positivos, separando-os por bairros.
 
 
 comandos> 
-''' 
+``` 
 composer update
 php artisan key:generate
 php artisan db:seed --class=casosTableSeeder
-'''
+```
 
 ![Screenshot](https://github.com/maeliseu/Projeto-Combate-COVID19/blob/master/public/Capturar.PNG)
