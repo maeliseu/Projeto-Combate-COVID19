@@ -45,16 +45,30 @@ class MapsController extends Controller
         // GROUP by bairros.regiao     
         $casos=$this->objCasos->join('bairros' ,'casos.id_bairro','=','bairros.id')->get();
 
+        $casosTotais = (object) [
+            'regiao1' => $casos->where('regiao','=','1')->count(),
+            'regiao2' => $casos->where('regiao','=','2')->count(),
+            'regiao3' => $casos->where('regiao','=','3')->count(),
+            'regiao4' => $casos->where('regiao','=','4')->count(),
+            'regiao5' => $casos->where('regiao','=','5')->count(),
+            'regiao6' => $casos->where('regiao','=','6')->count(),
+            'regiao7' => $casos->where('regiao','=','7')->count(),
+            'regiao8' => $casos->where('regiao','=','8')->count(),
+            'regiao9' => $casos->where('regiao','=','9')->count(),
+            'regiaototal' => $casos->count() 
+        ];
+
+
         $img = Image::make('mapaoplimpo.png');
-        $this->makeMap('265','383',$img,$casos->where('regiao','=','1')->count());
-        $this->makeMap('308','264',$img,$casos->where('regiao','=','2')->count());
-        $this->makeMap('88','365',$img,$casos->where('regiao','=','3')->count());
-        $this->makeMap('270','630',$img,$casos->where('regiao','=','4')->count());
-        $this->makeMap('425','440',$img,$casos->where('regiao','=','5')->count());
-        $this->makeMap('511','570',$img,$casos->where('regiao','=','6')->count());
-        $this->makeMap('297','531',$img,$casos->where('regiao','=','7')->count());
-        $this->makeMap('642','434',$img,$casos->where('regiao','=','8')->count());
-        $this->makeMap('768','355',$img,$casos->where('regiao','=','9')->count());
+        $this->makeMap('265','383',$img,$casosTotais->regiao1);
+        $this->makeMap('308','264',$img,$casosTotais->regiao2);
+        $this->makeMap('88','365',$img,$casosTotais->regiao3);
+        $this->makeMap('270','630',$img,$casosTotais->regiao4);
+        $this->makeMap('425','440',$img,$casosTotais->regiao5);
+        $this->makeMap('511','570',$img,$casosTotais->regiao6);
+        $this->makeMap('297','531',$img,$casosTotais->regiao7);
+        $this->makeMap('642','434',$img,$casosTotais->regiao8);
+        $this->makeMap('768','355',$img,$casosTotais->regiao9);
 
         $img->resize(682.5, 590.25);
 
@@ -64,6 +78,6 @@ class MapsController extends Controller
         $new_image = 'data:image/' . $type . ';base64,' . base64_encode($img);
         
         
-        return view('maps', compact('casos', 'new_image'));
+        return view('maps', compact('casosTotais', 'new_image'));
     }
 }
