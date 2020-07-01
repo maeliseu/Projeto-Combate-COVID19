@@ -4,7 +4,8 @@ CRUD dos casos positivos, separando-os por bairros.
 
 
 
-
+Open source PHP image handling and manipulation library
+http://image.intervention.io
 
 comandos> 
 ``` 
